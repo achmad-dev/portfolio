@@ -1,13 +1,17 @@
-import logo from './logo.svg';
-import SolarSystem from './components/canvas/world-spin';
-import './App.css';
+import logo from "./logo.svg";
+import SolarSystem from "./components/canvas/world-spin";
+import Clock from "./components/canvas/clock";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <SolarSystem />
+        <div style={{ display: "flex" }}>
+          <img src={logo} className="App-logo" alt="logo" />
+          <SolarSystem />
+          <Clock />
+        </div>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

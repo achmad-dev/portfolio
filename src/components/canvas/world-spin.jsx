@@ -45,7 +45,7 @@ const SolarSystem = () => {
     //loop the animation
     requestAnimationFrame(() => contex(ctx));
   };
-  return <Canvas drawItem={contex} />;
+  return <Canvas drawItem={contex} width={"400px"} height={"400px"} />;
 };
 
 export default SolarSystem;
