@@ -5,6 +5,8 @@ import moon from "./assets/solar/Canvas_moon.png";
 import sun from "./assets/solar/Canvas_sun2.png";
 import sunBg from "./assets/solar/Canvas_sun.png";
 
+const solarId = "solar";
+
 const SolarSystem = () => {
   const moonImage = new Image();
   moonImage.src = moon;
@@ -54,7 +56,7 @@ const SolarSystem = () => {
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
       }}
     >
-      <Canvas drawItem={contex} width={400} height={400} />
+      <Canvas id={solarId} drawItem={contex} width={400} height={400} />
     </div>
   );
 };

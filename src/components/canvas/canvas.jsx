@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-const Canvas = ({ drawItem, width, height }) => {
+const Canvas = ({ drawItem, width, height, id }) => {
   const canvasRef = useRef([]);
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const Canvas = ({ drawItem, width, height }) => {
     return () => cancelAnimationFrame(canvas);
   }, [drawItem]);
 
-  return <canvas className="canvas" width={width} height={height} ref={canvasRef} />;
+  return <canvas id={id} className="canvas" width={width} height={height} ref={canvasRef} />;
 };
 
 export default Canvas;

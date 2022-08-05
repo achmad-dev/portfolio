@@ -1,6 +1,8 @@
 import React from "react";
 import Canvas from "./canvas";
 
+const clockId = "clock";
+
 const Clock = () => {
   const context = (ctx) => {
     const now = new Date();
@@ -106,7 +108,7 @@ const Clock = () => {
         borderRadius: "200px",
       }}
     >
-      <Canvas drawItem={context} width={150} height={150} />
+      <Canvas id={clockId} drawItem={context} width={150} height={150} />
     </div>
   );
 };
