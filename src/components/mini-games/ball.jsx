@@ -6,7 +6,7 @@ const ballId = "ball";
 const height = 480;
 const width = 480;
 
-const offsetLeft = 18;
+const offsetLeft = 480;
 
 const PinBall = () => {
   const context = (ctx) => {
@@ -158,12 +158,11 @@ const PinBall = () => {
       y += dy;
     }
 
-    let interval = setInterval(draw, 10);
+    let interval = setInterval(draw, 20);
   };
-
   return (
     <>
-      <Canvas id={ballId} width={width} height={height} drawItem={context} />
+      <Canvas id={ballId} width={width} border={'1px solid red'} height={height} drawItem={context} />
     </>
   );
 };
