@@ -5,9 +5,12 @@ export const portfoliocontext = createContext();
 
 export const PortfolioProvider = ({ children }) => {
   const [ballFinish, setBallFinish] = useState(false);
+  const [ballStart, setBallStart] = useState(false);
   const api = useApi();
   return (
-    <portfoliocontext.Provider value={{ ballFinish, setBallFinish, ...api }}>
+    <portfoliocontext.Provider
+      value={{ ballFinish, setBallFinish, ballStart, setBallStart, ...api }}
+    >
       {children}
     </portfoliocontext.Provider>
   );

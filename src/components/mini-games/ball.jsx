@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import Canvas from "../canvas/canvas";
+import { portfoliocontext } from "../../context/context";
 
 const ballId = "ball";
 
@@ -9,6 +10,7 @@ const width = 480;
 const offsetLeft = 480;
 
 const PinBall = () => {
+  const { ballFinish, setBallFinish, ballStart, setBallStart } = useContext(portfoliocontext);
   const context = (ctx) => {
     let ballRadius = 10;
     let x = width / 2;
@@ -78,8 +80,9 @@ const PinBall = () => {
               b.status = 0;
               score++;
               if (score === brickRowCount * brickColumnCount) {
-                document.location.reload();
                 clearInterval(interval); // Needed for Chrome to end game
+                setBallFinish(true);
+                setBallStart(false);
               }
             }
           }
@@ -141,8 +144,9 @@ const PinBall = () => {
         if (x > paddleX && x < paddleX + paddleWidth) {
           dy = -dy;
         } else {
-          document.location.reload();
           clearInterval(interval); // Needed for Chrome to end game
+          setBallFinish(true);
+          setBallStart(false);
         }
       }
 
@@ -160,13 +164,15 @@ const PinBall = () => {
   };
   return (
     <>
-      <Canvas
-        id={ballId}
-        width={width}
-        border={"1px solid red"}
-        height={height}
-        drawItem={context}
-      />
+      {ballStart &&  ballFinish !== true && (
+        <Canvas
+          id={ballId}
+          width={width}
+          border={"1px solid red"}
+          height={height}
+          drawItem={context}
+        />
+      )}
     </>
   );
 };
