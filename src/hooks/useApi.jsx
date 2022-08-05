@@ -1,33 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
 
-const useApi = (url, options, initialValue) => {
-  const [data, setData] = useState(initialValue);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+const useApi = () => {
+  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    setLoading(true);
-    setError(null);
+  const getData = async (url) => {
+    const response = await axios({
+      method: "get",
+      url: url,
+    });
+    setData(response.data);
+  }
 
-    fetch(url, options)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Something went wrong");
-        }
-      })
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
-  }, [url, options]);
-
-  return { data, loading, error };
-};
+  return {
+    data,
+    getData,
+  }
+}
 
 export default useApi;
