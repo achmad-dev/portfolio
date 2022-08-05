@@ -78,7 +78,6 @@ const PinBall = () => {
               b.status = 0;
               score++;
               if (score === brickRowCount * brickColumnCount) {
-                alert("YOU WIN, CONGRATS!");
                 document.location.reload();
                 clearInterval(interval); // Needed for Chrome to end game
               }
@@ -112,7 +111,7 @@ const PinBall = () => {
             bricks[c][r].y = brickY;
             ctx.beginPath();
             ctx.rect(brickX, brickY, brickWidth, brickHeight);
-            ctx.fillStyle = "#0095DD";
+            ctx.fillStyle = "red";
             ctx.fill();
             ctx.closePath();
           }
@@ -121,7 +120,7 @@ const PinBall = () => {
     }
     function drawScore() {
       ctx.font = "16px Arial";
-      ctx.fillStyle = "#0095DD";
+      ctx.fillStyle = "pink";
       ctx.fillText("Score: " + score, 8, 20);
     }
 
@@ -142,7 +141,6 @@ const PinBall = () => {
         if (x > paddleX && x < paddleX + paddleWidth) {
           dy = -dy;
         } else {
-          alert("GAME OVER");
           document.location.reload();
           clearInterval(interval); // Needed for Chrome to end game
         }
@@ -162,7 +160,13 @@ const PinBall = () => {
   };
   return (
     <>
-      <Canvas id={ballId} width={width} border={'1px solid red'} height={height} drawItem={context} />
+      <Canvas
+        id={ballId}
+        width={width}
+        border={"1px solid red"}
+        height={height}
+        drawItem={context}
+      />
     </>
   );
 };
