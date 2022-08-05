@@ -9,7 +9,7 @@ const Clock = () => {
     ctx.translate(75, 75);
     ctx.scale(0.4, 0.4);
     ctx.rotate(-Math.PI / 2);
-    ctx.strokeStyle = "black";
+    ctx.strokeStyle = "red";
     ctx.fillStyle = "white";
     ctx.lineWidth = 8;
     ctx.lineCap = "round";
@@ -43,7 +43,7 @@ const Clock = () => {
     const min = now.getMinutes();
     const hr = now.getHours() % 12;
 
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "blue";
 
     // write Hours
     ctx.save();
@@ -70,8 +70,8 @@ const Clock = () => {
     // Write seconds
     ctx.save();
     ctx.rotate((sec * Math.PI) / 30);
-    ctx.strokeStyle = "#D40000";
-    ctx.fillStyle = "#D40000";
+    ctx.strokeStyle = "green";
+    ctx.fillStyle = "green";
     ctx.lineWidth = 6;
     ctx.beginPath();
     ctx.moveTo(-30, 0);
@@ -83,21 +83,32 @@ const Clock = () => {
     ctx.beginPath();
     ctx.arc(95, 0, 10, 0, Math.PI * 2, true);
     ctx.stroke();
-    ctx.fillStyle = "rgba(0, 0, 0, 0)";
+    ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
     ctx.arc(0, 0, 3, 0, Math.PI * 2, true);
     ctx.fill();
     ctx.restore();
 
     ctx.beginPath();
     ctx.lineWidth = 14;
-    ctx.strokeStyle = "#325FA2";
+    ctx.strokeStyle = "blue";
     ctx.arc(0, 0, 142, 0, Math.PI * 2, true);
     ctx.stroke();
 
     ctx.restore();
     requestAnimationFrame(() => context(ctx));
   };
-  return <Canvas drawItem={context} width={200} height={200} />;
+  return (
+    <div
+      style={{
+        backgroundColor: "transparent",
+        height: "150px",
+        width: "150px",
+        borderRadius: "200px",
+      }}
+    >
+      <Canvas drawItem={context} width={150} height={150} />
+    </div>
+  );
 };
 
 export default Clock;

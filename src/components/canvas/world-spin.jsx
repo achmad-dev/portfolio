@@ -2,7 +2,8 @@ import React from "react";
 import Canvas from "./canvas";
 import earth from "./assets/solar/Canvas_earth.png";
 import moon from "./assets/solar/Canvas_moon.png";
-import sun from "./assets/solar/Canvas_sun.png";
+import sun from "./assets/solar/Canvas_sun2.png";
+import sunBg from "./assets/solar/Canvas_sun.png";
 
 const SolarSystem = () => {
   const moonImage = new Image();
@@ -14,7 +15,6 @@ const SolarSystem = () => {
   const contex = (ctx) => {
     ctx.globalCompositeOperation = "destination-over";
     ctx.clearRect(0, 0, 300, 300); // clear canvas
-
     ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
     ctx.strokeStyle = "rgba(0, 153, 255, 0.4)";
     ctx.save();
@@ -25,7 +25,7 @@ const SolarSystem = () => {
         ((2 * Math.PI) / 60000) * time.getMilliseconds()
     );
     ctx.translate(105, 0);
-    ctx.fillRect(0, -12, 40, 24); // Shadow
+    // ctx.fillRect(0, -12, 40, 24); // Shadow
     ctx.drawImage(earthImage, -12, -12);
     ctx.save();
     ctx.rotate(
@@ -42,10 +42,21 @@ const SolarSystem = () => {
     ctx.stroke();
 
     ctx.drawImage(sunImage, 0, 0, 300, 300);
-    //loop the animation
     requestAnimationFrame(() => contex(ctx));
   };
-  return <Canvas drawItem={contex} width={"400px"} height={"400px"} />;
+  return (
+    <div
+      style={{
+        background: `url(${sunBg})`,
+        borderRadius: "700px",
+        height: "300px",
+        width: "300px",
+        boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
+      }}
+    >
+      <Canvas drawItem={contex} width={400} height={400} />
+    </div>
+  );
 };
 
 export default SolarSystem;

@@ -1,29 +1,21 @@
-import logo from "./logo.svg";
 import SolarSystem from "./components/canvas/world-spin";
 import Clock from "./components/canvas/clock";
-import "./App.css";
+import Description from "./components/description";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <div style={{ display: "flex" }}>
-          <img src={logo} className="App-logo" alt="logo" />
+      <div style={{ display: "flex" }}>
+        <div style={{ flex: 1, marginLeft: '24px' }}>
           <SolarSystem />
-          <Clock />
+          <Description
+            textInput={"Hello World"}
+            attribute={`let's see some sign of time in universe`}
+            description={`This is a description of the text input`}
+          />
         </div>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Clock />
+      </div>
     </div>
   );
 }
