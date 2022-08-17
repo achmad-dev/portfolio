@@ -11,7 +11,7 @@ const Button = ({ text }) => {
           <div>
             <p>
               <span
-                style={{ color: "red", fontSize: "24px", fontFamily: "arial" }}
+                style={{ color: "red", fontSize: "24px" }}
               >
                 Hello
               </span>
@@ -20,13 +20,7 @@ const Button = ({ text }) => {
           </div>
           <div>
             <button
-              style={{
-                backgroundColor: "red",
-                color: "white",
-                height: "30px",
-                widht: "70px",
-                borderRadius: "10px",
-              }}
+              className="start-game"
               onClick={() => {
                 setBallFinish(false);
                 setBallStart(true);
