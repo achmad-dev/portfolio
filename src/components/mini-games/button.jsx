@@ -21,12 +21,11 @@ const Button = ({ text }) => {
           <div>
             <button
               style={{
-                backgroundColor: "#ab2eb9",
+                backgroundColor: "red",
                 color: "white",
-                height: "50px",
+                height: "30px",
                 widht: "70px",
                 borderRadius: "10px",
-                border: "1px solid white",
               }}
               onClick={() => {
                 setBallFinish(false);
