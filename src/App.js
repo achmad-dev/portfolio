@@ -2,6 +2,7 @@ import { PortfolioProvider } from "./context/context";
 import { NavBar } from "./components/navbar/navbar";
 import { Banner } from "./components/banner/banner";
 import { Skills } from "./components/skills/skills";
+import { Projects } from "./components/projects/projects";
 import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
         <NavBar />
         <Banner />
         <Skills />
+        <Projects />
       </div>
     </PortfolioProvider>
   );

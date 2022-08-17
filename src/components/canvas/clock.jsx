@@ -11,7 +11,7 @@ const Clock = () => {
     ctx.translate(75, 75);
     ctx.scale(0.4, 0.4);
     ctx.rotate(-Math.PI / 2);
-    ctx.strokeStyle = "red";
+    ctx.strokeStyle = "rgba(199,21,133, 0.9)";
     ctx.fillStyle = "white";
     ctx.lineWidth = 8;
     ctx.lineCap = "round";
@@ -72,8 +72,8 @@ const Clock = () => {
     // Write seconds
     ctx.save();
     ctx.rotate((sec * Math.PI) / 30);
-    ctx.strokeStyle = "green";
-    ctx.fillStyle = "green";
+    ctx.strokeStyle = "rgba(255,0,255, 1)";
+    ctx.fillStyle = "rgba(255,0,255, 1)";
     ctx.lineWidth = 6;
     ctx.beginPath();
     ctx.moveTo(-30, 0);
@@ -92,7 +92,7 @@ const Clock = () => {
 
     ctx.beginPath();
     ctx.lineWidth = 14;
-    ctx.strokeStyle = "blue";
+    ctx.strokeStyle = "rgba(0,191,255, 0.9)";
     ctx.arc(0, 0, 142, 0, Math.PI * 2, true);
     ctx.stroke();
 

@@ -41,9 +41,17 @@ export const Banner = () => {
   const checkTime = () => {
     let date = new Date();
     let hour = date.getHours();
-    if (hour < 18 && hour > 6) {
+    //check if it is night, morning, day or evening
+    if (hour < 12 && hour >= 5) {
+      return "morning";
+    }
+    if (hour >= 12 && hour < 15) {
       return "day";
-    } else {
+    }
+    if (hour >= 15 && hour < 19) {
+      return "evening";
+    }
+    else {
       return "night";
     }
   }
