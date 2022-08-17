@@ -3,7 +3,6 @@ import Canvas from "./canvas";
 import earth from "../../assets/solar/Canvas_earth.png";
 import moon from "../../assets/solar/Canvas_moon.png";
 import sun from "../../assets/solar/Canvas_sun2.png";
-// import sunBg from "../../assets/solar/Canvas_sun.png"
 
 const solarId = "solar";
 
@@ -49,9 +48,9 @@ const SolarSystem = () => {
   return (
     <div
       style={{
-        borderRadius: "700px",
-        height: "300px",
-        width: "300px",
+        borderRadius: "50%",
+        height: "50%",
+        width: "50%",
       }}
     >
       <Canvas id={solarId} drawItem={contex} width={400} height={400} />

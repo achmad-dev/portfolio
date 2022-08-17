@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import SolarSystem from "../canvas/world-spin";
+import Clock from "../canvas/clock";
 export const Banner = () => {
   const [loopText, setLoopText] = useState(0);
   const [isChange, setIsChange] = useState(false);
@@ -33,12 +34,35 @@ export const Banner = () => {
       setDelta(500);
     }
   };
+  //check user time if it is night or day
+  const checkTime = () => {
+    let date = new Date();
+    let hour = date.getHours();
+    if (hour < 18 && hour > 6) {
+      return "day";
+    } else {
+      return "night";
+    }
+  }
   return (
     <section className="banner" id="home">
       <Container>
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
-            <span className="tagline">Welcome</span>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <div style={{
+                height: "100%",
+                width: "auto",
+              }}>
+                <span className="tagline">Welcome and good {checkTime()}</span>
+              </div>
+              <Clock />
+            </div>
             <h1>
               {`Hi I'm Human `}
               <span className="wrap">{show}</span>
