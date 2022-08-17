@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import SolarSystem from "../canvas/world-spin";
 import Clock from "../canvas/clock";
@@ -7,15 +7,11 @@ export const Banner = () => {
   const [isChange, setIsChange] = useState(false);
   const [show, setShow] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const text = ["Frontend Developer", "Waifu Lover", "Anime Enthusiast"];
+  const text = useMemo(() => {
+   return ["Frontend Developer", "Waifu Lover", "Anime Enthusiast"]
+  }, []);
   const time = 3000;
-  useEffect(() => {
-    let interval = setInterval(() => {
-      change();
-    }, delta);
-    return () => clearInterval(interval);
-  }, [show]);
-  const change = () => {
+  const change = useCallback(() => {
     let i = loopText % text.length;
     let fullText = text[i];
     let updatedText = isChange
@@ -33,7 +29,14 @@ export const Banner = () => {
       setLoopText(loopText + 1);
       setDelta(500);
     }
-  };
+  }, [text, isChange, show, time, loopText]);
+  useEffect(() => {
+    let interval = setInterval(() => {
+      change();
+    }, delta);
+    return () => clearInterval(interval);
+  }, [show, change, delta]);
+  
   //check user time if it is night or day
   const checkTime = () => {
     let date = new Date();
