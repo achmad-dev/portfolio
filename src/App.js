@@ -1,10 +1,13 @@
 import { PortfolioProvider } from "./context/context";
-
+import { NavBar } from "./components/navbar/navbar";
+import { Banner } from "./components/banner/banner";
+import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
   return (
     <PortfolioProvider>
       <div className="App">
-        <h1>My portfolio</h1>
+        <NavBar />
+        <Banner />
       </div>
     </PortfolioProvider>
   );

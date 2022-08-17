@@ -26,13 +26,22 @@ export const NavBar = () => {
       <Navbar expand="lg" className={isScrolled ? "scrolled" : "navbar "}>
         <Container>
           <Navbar.Brand href="#home">
-            <img src={""} alt="logo" />
+           <span style={{
+            color: "#fff",
+            fontSize: "3rem",
+            fontWeight: "normal",
+            fontFamily: "Mayson"
+           }}><span style={{
+            color: "red",
+            fontSize: "5rem",
+            fontWeight: "bold",
+           }}>H</span>ello</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
+            <Nav className="me-auto">
               <Nav.Link
                 href="#home"
                 className={activeLink === "home" ? "home" : "navbar-link"}
@@ -48,15 +57,15 @@ export const NavBar = () => {
                 skills
               </Nav.Link>
               <Nav.Link
-                href="#project"
-                className={activeLink === "project" ? "project" : "navbar-link"}
-                onClick={() => updateActiveLink("project")}
+                href="#projects"
+                className={activeLink === "projects" ? "projects" : "navbar-link"}
+                onClick={() => updateActiveLink("projects")}
               >
                 project
               </Nav.Link>
             </Nav>
             <span className="navbar-text">
-              <div className="social-media">
+              <div className="social-icon">
                 <a href="#">
                   <img src={""} alt="" />
                 </a>

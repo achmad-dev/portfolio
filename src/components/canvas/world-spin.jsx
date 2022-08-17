@@ -1,8 +1,9 @@
 import React from "react";
 import Canvas from "./canvas";
-import earth from "./assets/solar/Canvas_earth.png";
-import moon from "./assets/solar/Canvas_moon.png";
-import sun from "./assets/solar/Canvas_sun2.png";
+import earth from "../../assets/solar/Canvas_earth.png";
+import moon from "../../assets/solar/Canvas_moon.png";
+import sun from "../../assets/solar/Canvas_sun2.png";
+// import sunBg from "../../assets/solar/Canvas_sun.png"
 
 const solarId = "solar";
 
