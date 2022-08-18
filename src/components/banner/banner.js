@@ -92,7 +92,7 @@ export const Banner = () => {
               }}
             >
               Download CV And Hire Me{" "}
-              <a href="#">
+              <a href="https://www.linkedin.com/in/achmad-alfazari-81a491235/">
                 <FaArrowAltCircleDown />
               </a>
             </button>
