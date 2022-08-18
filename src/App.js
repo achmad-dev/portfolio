@@ -5,6 +5,7 @@ import { Skills } from "./components/skills/skills";
 import { Projects } from "./components/projects/projects";
 import { PinBallGame } from "./components/mini-games/pinBall";
 import { Footer } from "./components/footer/footer";
+import Notification from "./components/notifications/notification";
 import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Projects />
         <PinBallGame />
         <Footer />
+        <Notification />
       </div>
     </PortfolioProvider>
   );

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { FaArrowAltCircleDown } from "react-icons/fa";
+import { toast } from "react-toastify";
 import SolarSystem from "../canvas/world-spin";
 import Clock from "../canvas/clock";
 export const Banner = () => {
@@ -8,7 +10,7 @@ export const Banner = () => {
   const [show, setShow] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const text = useMemo(() => {
-   return ["Frontend Developer", "Waifu Lover", "Anime Enthusiast"]
+    return ["Frontend Developer", "Waifu Lover", "Anime Enthusiast"];
   }, []);
   const time = 3000;
   const change = useCallback(() => {
@@ -36,7 +38,7 @@ export const Banner = () => {
     }, delta);
     return () => clearInterval(interval);
   }, [show, change, delta]);
-  
+
   //check user time if it is night or day
   const checkTime = () => {
     let date = new Date();
@@ -50,11 +52,10 @@ export const Banner = () => {
     }
     if (hour >= 15 && hour < 19) {
       return "evening";
-    }
-    else {
+    } else {
       return "night";
     }
-  }
+  };
   return (
     <section className="banner" id="home">
       <Container>
@@ -66,10 +67,12 @@ export const Banner = () => {
                 flexDirection: "row",
               }}
             >
-              <div style={{
-                height: "100%",
-                width: "auto",
-              }}>
+              <div
+                style={{
+                  height: "100%",
+                  width: "auto",
+                }}
+              >
                 <span className="tagline">Welcome and good {checkTime()}</span>
               </div>
               <Clock />
@@ -83,12 +86,15 @@ export const Banner = () => {
               Inovation.
             </p>
             <button
-            
               onClick={() => {
-                console.log("clicked");
+                toast.dismiss();
+                toast("Thanks for visiting my portfolio");
               }}
             >
-              Hire Me
+              Download CV And Hire Me{" "}
+              <a href="#">
+                <FaArrowAltCircleDown />
+              </a>
             </button>
           </Col>
           <Col xs={12} md={6} xl={5}>
