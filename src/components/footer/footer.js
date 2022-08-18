@@ -16,7 +16,7 @@ export const Footer = () => {
                 fontWeight: "bold",
               }}
             >
-              Achmad
+              Portfolio
             </span>
           </Col>
           <Col size={12} sm={6} className="text-center text-sm-end">
