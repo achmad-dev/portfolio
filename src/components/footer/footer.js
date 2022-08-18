@@ -3,6 +3,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import { FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa";
 
 export const Footer = () => {
+  //get current year
+  const year = new Date().getFullYear();
   return (
     <footer className="footer" id="footer">
       <Container>
@@ -29,7 +31,7 @@ export const Footer = () => {
                 <FaInstagram />
               </a>
             </div>
-            <p>Copyright 2022. All Rights Reserved</p>
+            <p>Copyright {year}. All Rights Reserved</p>
           </Col>
         </Row>
       </Container>
