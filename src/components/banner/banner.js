@@ -75,14 +75,15 @@ export const Banner = () => {
               <Clock />
             </div>
             <h1>
-              {`Hi I'm Human `}
+              {`Hi I'm Achmad Alfazari `}
               <span className="wrap">{show}</span>
             </h1>
             <p>
-              I'm a Frontend Developer with a passion for creating beautiful and
-              intuitive user experiences website.
+              I'm a Frontend Developer with a passion for learning and
+              Inovation.
             </p>
             <button
+            
               onClick={() => {
                 console.log("clicked");
               }}

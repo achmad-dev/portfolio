@@ -11,7 +11,7 @@ const Button = ({ text }) => {
           <div>
             <p>
               <span
-                style={{ color: "red", fontSize: "24px" }}
+                style={{ color: "red", fontSize: "50px" }}
               >
                 Hello
               </span>

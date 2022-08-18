@@ -475,6 +475,20 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /************ Mini Game ************/
+.mini-game {
+  padding: 0 0 50px 0;
+  margin-top: 50px;
+  position: relative;
+}
+.mini-game-bx {
+  background: #151515;
+  border-radius: 64px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 60px 50px;
+  margin-top: -60px;
+}
 .start-game {
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -490,4 +504,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/************ Footer ************/
+.footer img {
+  width: 26%;
+}
+.footer p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #B8B8B8;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
 }
