@@ -10,7 +10,7 @@ export const Banner = () => {
   const [show, setShow] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const text = useMemo(() => {
-    return ["Frontend Developer", "Waifu Lover", "Anime Enthusiast"];
+    return ["Frontend Developer"];
   }, []);
   const time = 3000;
   const change = useCallback(() => {
